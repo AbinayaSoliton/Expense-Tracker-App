@@ -1,8 +1,8 @@
-import { expenseSummary, categoryDataTitle } from "./data.js";
+import { categoryDataTitle } from "./data.js";
 import "./CategorySummary.css"
 // import { useState } from 'react';
 
-export default function CategorySummaryTile({category}) {    
+export default function CategorySummaryTile({category, expenseSummary}) {    
      const filteredCategoryData = expenseSummary.filter(expense => 
         expense.category === category
      );

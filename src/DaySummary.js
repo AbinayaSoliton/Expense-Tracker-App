@@ -4,7 +4,7 @@ import CategorySummaryTile from "./CategorySummary.js";
 
 const DaySummaryHeaderText = 'Day Summary';
 
-export default function DaySummary() {
+export default function DaySummary({expenseSummary}) {
     return (
         <section className='day-summary-cont'>
             <div>
@@ -14,15 +14,19 @@ export default function DaySummary() {
                 <section className="expense-summary-tiles">
                     <CategorySummaryTile
                         category = {categoryList[0]}
+                        expenseSummary = {expenseSummary}
                     />
                     <CategorySummaryTile
                         category = {categoryList[1]}
+                        expenseSummary = {expenseSummary}
                     />
                     <CategorySummaryTile
                         category = {categoryList[2]}
+                        expenseSummary = {expenseSummary}
                     />
                     <CategorySummaryTile
                         category = {categoryList[3]}
+                        expenseSummary = {expenseSummary}
                     />
                 </section>                 
             </div>

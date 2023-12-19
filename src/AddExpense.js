@@ -1,5 +1,5 @@
 import "./AddExpense.css";
-import { expenseFieldNames,expenseSummary } from "./data.js";
+import { expenseFieldNames } from "./data.js";
 
 function ExpenseField ({label}) {
     return(
@@ -15,7 +15,7 @@ function ExpenseFieldsList () {
             <ExpenseField
                 label = {field.labelName}                       
             /> 
-            <input type='text' className='expense-field-input'> 
+            <input type='text' id={field.id} className='expense-field-input'> 
             </input>
         </>
     );
@@ -35,7 +35,17 @@ export default function AddExpense({onAddExpense}) {
             <div className="add-expense-fields">
                 <ExpenseFieldsList />                       
             </div>            
-            <button className='add-expense-btn' onClick={onAddExpense}>
+            <button className='add-expense-btn' onClick={
+                    () => {                        
+                        onAddExpense({
+                            item: document.getElementById('Item').value,
+                            category: document.getElementById('Category').value,
+                            dateInUTC: document.getElementById('Date').value,
+                            amountInRupees: document.getElementById('Amount').value,
+                            isNeeded: 'yes'
+                        })
+                    }
+                }>
                 Add Expense
             </button>
         </div>

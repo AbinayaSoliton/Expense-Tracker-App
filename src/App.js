@@ -25,34 +25,24 @@ function PageFooter() {
 }
 
 export default function App () {
-    const [expenseSummary, setExpense] = useState([]);
+    const [newExpenseSummary, setExpense] = useState(expenseSummary);
     return (
         <div className='main-cont'>      
             <PageHeader/>
             <div className='body-cont'> 
-                <DaySummary />                
+                <DaySummary expenseSummary={newExpenseSummary} />                
                 <AddExpense 
-                    onAddExpense={() => 
+                    onAddExpense={(newExpense) => 
                         {
+                            console.log(newExpense)
                             setExpense([
-                                ...expenseSummary,
-                                {
-                                    item:'Lunch',
-                                    category:'Food',
-                                    dateInUTC:'2023-13-12 12:39:32',
-                                    amountInRupees: 120,
-                                    isNeeded: 'yes'
-                                }
+                                ...newExpenseSummary,                                
+                                newExpense
                             ]);
-                            console.log(expenseSummary);
+                            console.log(newExpenseSummary);
                         }
                     }
-                />   
-                <ul>
-                    {expenseSummary.map(expense => (
-                        <li key={expense.item}>{expense.category}</li>
-                    ))}
-                </ul>                        
+                />                        
             </div>  
             <PageFooter/>
         </div>
