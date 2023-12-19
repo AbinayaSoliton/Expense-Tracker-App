@@ -1,0 +1,46 @@
+.add-expense-cont {
+    background-color: rgb(198, 200, 242);
+    display: flex;
+    width: 25vw;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: calc(10px + 2vmax);
+}
+
+.add-expense-fields {
+    display: flex;
+    width: 25vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: calc(10px + 2vmax);
+    height: 60vh;
+}
+
+.expense-fields-grid {
+    background-color: rgb(194, 238, 164);
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+    font-size: calc(2px + 2vmax);
+    row-gap: 0.5em;
+    width: 25vw;
+}
+
+.expense-field {
+    background-color: rgb(194, 238, 164);
+    border: 10px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    font-size: calc(22px);
+}
+
+.expense-field-label {
+    font-size: calc(22px);
+}
+
+.expense-field-input {
+    height: 20px;
+    width: 180px;
+}
