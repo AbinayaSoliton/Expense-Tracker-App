@@ -21,10 +21,12 @@
 .expense-fields-grid {
     background-color: rgb(194, 238, 164);
     display: grid;
-    grid-template-columns: repeat(2, 3fr);
+    grid-template-columns: 1fr 2fr;
     font-size: calc(2px + 2vmax);
     row-gap: 0.5em;
     width: 25vw;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 .expense-field {
@@ -37,10 +39,16 @@
 }
 
 .expense-field-label {
-    font-size: calc(22px);
+    font-size: 16px;
+    width: 100%;
 }
 
 .expense-field-input {
     height: 20px;
-    width: 180px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.expense-field-essential {
+    width: 100%
 }

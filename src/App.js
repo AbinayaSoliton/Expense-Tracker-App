@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
 import "./App.css";
 import AddExpense from './AddExpense';
 import DaySummary from './DaySummary';
-import { useState } from 'react';  
 import { expenseSummary } from './data';
 
 const pageHeaderText = 'Expense Tracker';
@@ -25,6 +24,20 @@ function PageFooter() {
 }
 
 export default function App () {
+    useEffect(() => {
+            const getAPI = () => {
+            const API = 'http://127.0.0.1:5000/'
+            fetch(API)
+                .then((response) => {
+                    console.log(response);
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log(data);
+                })
+        };
+        getAPI();
+    }, []);
     const [newExpenseSummary, setExpense] = useState(expenseSummary);
     return (
         <div className='main-cont'>      
@@ -34,12 +47,12 @@ export default function App () {
                 <AddExpense 
                     onAddExpense={(newExpense) => 
                         {
-                            console.log(newExpense)
+                            console.log('newExpense',newExpense)
                             setExpense([
                                 ...newExpenseSummary,                                
                                 newExpense
                             ]);
-                            console.log(newExpenseSummary);
+                            console.log('newExpenseSummary',newExpenseSummary);
                         }
                     }
                 />                        
