@@ -30,7 +30,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmax);
 }
 
@@ -53,6 +53,24 @@
     align-items: flex-end;
     justify-content: center;
     font-size: calc(10px + 2vmax);
+}
+
+.nav-bar {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bar li {
+    margin-right: 1 rem;
+    display: inline;
+    list-style-type: circle;
+}
+
+.bread-crumb {
+    width:300px;
+    font-size: 16px;
 }
 
 .app-link {

@@ -1,12 +1,12 @@
-import "./DaySummary.css";
+import "./ExpenseSummary.css";
 import { categoryList } from "./data.js";
 import CategorySummaryTile from "./CategorySummary";
 import React from "react";
 import { Expense } from "./expenseInterface";
 
-const DaySummaryHeaderText = "Day Summary";
+const ExpenseSummaryHeaderText = "Expense Summary";
 
-interface DaySummaryProps {
+interface ExpenseSummaryProps {
     expenseSummary:Expense[]
 }
 
@@ -16,7 +16,7 @@ function getExpense() {
     return response.text();
   });
 }
-const DaySummary: React.FC<DaySummaryProps> = ({ expenseSummary }) => {
+const ExpenseSummary: React.FC<ExpenseSummaryProps> = ({ expenseSummary }) => {
   // }
   // export default function DaySummary({expenseSummary}) {
   const dbExpense = getExpense();
@@ -24,7 +24,7 @@ const DaySummary: React.FC<DaySummaryProps> = ({ expenseSummary }) => {
   return (
     <section className="day-summary-cont">
       <section className="expense-summary-title-bar">
-        {DaySummaryHeaderText}
+        {ExpenseSummaryHeaderText}
       </section>
       <section className="expense-summary-tiles">
         <CategorySummaryTile
@@ -48,4 +48,4 @@ const DaySummary: React.FC<DaySummaryProps> = ({ expenseSummary }) => {
   );
 };
 
-export default DaySummary;
+export default ExpenseSummary;
